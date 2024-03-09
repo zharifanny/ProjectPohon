@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{64194E9E-22BA-7028-B5E9-6D0134202DC3}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="45d0e7e3-e70b-4755-88e1-3466f859a6bd" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/PlayerMovement.cs">
+    <Files>
+      <File FileName="Assets/Script/Gun.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/PlayerMovement.cs" Line="9" Column="42" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ProjectPohon">
+            <Node name="Assets" expanded="True">
+              <Node name="Script" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+</Properties>
