@@ -5,25 +5,15 @@ using UnityEngine;
 public class PlayerAim : MonoBehaviour
 {
     #region Datamembers
-
     #region Editor Settings
-
-    [SerializeField] private LayerMask groundMask;
-
-    #endregion
+    [SerializeField] private LayerMask groundMask; // The layermask that defines what is ground.
+    #endregion // is the end of the editor settings region
     #region Private Fields
-
-    private Camera mainCamera;
-
-    #endregion
-
-    #endregion
-
-
+    private Camera mainCamera; // Cache the camera, Camera.main is an expensive operation.
+    #endregion // is the end of the private fields region
+    #endregion // is the end of the datamembers region
     #region Methods
-
     #region Unity Callbacks
-
     private void Start()
     {
         // Cache the camera, Camera.main is an expensive operation.
@@ -56,8 +46,10 @@ public class PlayerAim : MonoBehaviour
 
     private (bool success, Vector3 position) GetMousePosition()
     {
+        // Create a ray from the mouse position. 
         var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
+        // Check if the ray hits something.
         if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, groundMask))
         {
             // The Raycast hit something, return with the position.
