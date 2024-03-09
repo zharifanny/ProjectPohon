@@ -1,5 +1,5 @@
-Experimenting Test scene
--camera following player location
--gun system w/ projectile
--movement system
--rotation x & z
+Experimenting Test scene <br>
+-camera following player location <br>
+-gun system w/ projectile <br>
+-movement system <br>
+-rotation x & z <br>
