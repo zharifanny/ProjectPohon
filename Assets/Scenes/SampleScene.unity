@@ -137,6 +137,8 @@ GameObject:
   - component: {fileID: 173649146}
   - component: {fileID: 173649149}
   - component: {fileID: 173649148}
+  - component: {fileID: 173649150}
+  - component: {fileID: 173649151}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -224,16 +226,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 173649149}
-  groundCheck: {fileID: 1887733973}
-  ground:
-    serializedVersion: 2
-    m_Bits: 64
   jumpSound: {fileID: 0}
   movementComponent: {fileID: 173649148}
+  aimScript: {fileID: 173649150}
   moveSpeed: 20
   maxMoveSpeed: 80
   minMoveSpeed: 5
-  animTurnSpeed: 30
 --- !u!114 &173649148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 8
+  mainCam: {fileID: 2090890679}
 --- !u!143 &173649149
 CharacterController:
   m_ObjectHideFlags: 0
@@ -273,6 +272,44 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &173649150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173649140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 521fdc8347a054599b8c7de4dcae922e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  movementComponent: {fileID: 173649148}
+  animTurnSpeed: 30
+--- !u!95 &173649151
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173649140}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c460943af92943c4ab4a1065c4359cf7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &199035395
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +325,7 @@ GameObject:
   - component: {fileID: 199035400}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -526,7 +563,7 @@ GameObject:
   - component: {fileID: 523533875}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -659,7 +696,7 @@ GameObject:
   - component: {fileID: 529766127}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -917,7 +954,7 @@ GameObject:
   - component: {fileID: 726911496}
   m_Layer: 0
   m_Name: Cube (5)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1240,7 +1277,7 @@ GameObject:
   - component: {fileID: 1115742574}
   m_Layer: 0
   m_Name: Cube (5)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1496,7 +1533,7 @@ GameObject:
   - component: {fileID: 1220362365}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1629,7 +1666,7 @@ GameObject:
   - component: {fileID: 1303691867}
   m_Layer: 0
   m_Name: Cube (6)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1834,7 +1871,7 @@ GameObject:
   - component: {fileID: 1455823080}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2073,7 +2110,7 @@ GameObject:
   - component: {fileID: 1924529787}
   m_Layer: 0
   m_Name: Cube (6)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2206,7 +2243,7 @@ GameObject:
   - component: {fileID: 1954134513}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -7,9 +7,14 @@ public class PlayerAim : MonoBehaviour
     #region Datamembers
     #region Editor Settings
     [SerializeField] private LayerMask groundMask; // The layermask that defines what is ground.
+    [SerializeField] MovementComponent movementComponent;
+    [SerializeField] float animTurnSpeed = 30f;
     #endregion // is the end of the editor settings region
     #region Private Fields
     private Camera mainCamera; // Cache the camera, Camera.main is an expensive operation.
+    private Vector2 aimInput;
+    private float animatorTurnSpeed;
+    private Animator animator;
     #endregion // is the end of the private fields region
     #endregion // is the end of the datamembers region
     #region Methods
@@ -18,6 +23,7 @@ public class PlayerAim : MonoBehaviour
     {
         // Cache the camera, Camera.main is an expensive operation.
         mainCamera = Camera.main;
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -29,37 +35,34 @@ public class PlayerAim : MonoBehaviour
 
     private void Aim()
     {
-        var (success, position) = GetMousePosition();
-        if (success)
+        if(Input.GetKey(KeyCode.Mouse1))
         {
-            // Calculate the direction
-            var direction = position - transform.position;
-
-            // You might want to delete this line.
-            // Ignore the height difference.
-            direction.y = 0;
-
-            // Make the transform look in the direction.
-            transform.forward = direction;
-        }
-    }
-
-    private (bool success, Vector3 position) GetMousePosition()
-    {
-        // Create a ray from the mouse position. 
-        var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-
-        // Check if the ray hits something.
-        if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, groundMask))
-        {
-            // The Raycast hit something, return with the position.
-            return (success: true, position: hitInfo.point);
+            Vector2 screenSize = new Vector2(Screen.width, Screen.height);
+            Vector2 screenPoint = Input.mousePosition;
+            aimInput = (screenPoint - (screenSize / 2f)).normalized;
         }
         else
         {
-            // The Raycast did not hit anything.
-            return (success: false, position: Vector3.zero);
+            aimInput = new Vector2();
         }
+    }
+
+    public void UpdateAim(Vector3 currentMoveDir)
+    {
+        Vector3 AimDir = currentMoveDir;
+        if (aimInput.magnitude != 0)
+        {
+            AimDir = movementComponent.InputToWorldDir(aimInput);
+        }
+        RotateTowards(AimDir);
+    }
+
+    private void RotateTowards(Vector3 AimDir)
+    {
+        float currentTurnSpeed = movementComponent.RotateTowards(AimDir);
+        animatorTurnSpeed = Mathf.Lerp(animatorTurnSpeed, currentTurnSpeed, Time.deltaTime * animTurnSpeed);
+
+        animator.SetFloat("turnSpeed", animatorTurnSpeed);
     }
 
     #endregion
