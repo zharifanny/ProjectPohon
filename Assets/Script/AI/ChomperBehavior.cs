@@ -8,8 +8,11 @@ public class ChomperBehavior : BehaviorTree
     {
         BTTask_Wait waitTask = new BTTask_Wait(2f);
         BTTask_Log log = new BTTask_Log("logging");
+        BTTask_AlwaysFail fail = new BTTask_AlwaysFail();
 
-        Selector Root = new Selector();
+        Sequencer Root = new Sequencer();
+        
+        Root.AddChild(fail);
         Root.AddChild(log);
         Root.AddChild(waitTask);
 

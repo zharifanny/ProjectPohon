@@ -64,20 +64,26 @@
     <Analyzer Include="D:\Unity\Hub\Editor\2022.3.13f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\AI\Perception\SightSense.cs" />
     <Compile Include="Assets\Script\SmoothCameraFollow.cs" />
-    <Compile Include="Assets\Script\AI\BTTask_Log.cs" />
+    <Compile Include="Assets\Script\AI\BehaviorTree\Blackboard.cs" />
+    <Compile Include="Assets\Script\AI\BehaviorTree\BTTask_Log.cs" />
+    <Compile Include="Assets\Script\AI\Perception\SenseComp.cs" />
     <Compile Include="Assets\Script\PlayerAim.cs" />
     <Compile Include="Assets\Script\AI\ChomperBehavior.cs" />
-    <Compile Include="Assets\Script\AI\Sequencer.cs" />
+    <Compile Include="Assets\Script\AI\BehaviorTree\BehaviorTree.cs" />
+    <Compile Include="Assets\Script\AI\BehaviorTree\Compositor.cs" />
+    <Compile Include="Assets\Script\AI\Perception\PerceptionStimuli.cs" />
     <Compile Include="Assets\Script\Bullet.cs" />
-    <Compile Include="Assets\Script\AI\Selector.cs" />
-    <Compile Include="Assets\Script\AI\BTNode.cs" />
-    <Compile Include="Assets\Script\AI\BehaviorTree.cs" />
-    <Compile Include="Assets\Script\AI\Compositor.cs" />
-    <Compile Include="Assets\Script\AI\BTTask_Wait.cs" />
+    <Compile Include="Assets\Script\AI\Perception\AlwaysAwareSense.cs" />
+    <Compile Include="Assets\Script\AI\BehaviorTree\BTTask_Wait.cs" />
+    <Compile Include="Assets\Script\AI\BehaviorTree\Sequencer.cs" />
+    <Compile Include="Assets\Script\AI\BehaviorTree\Selector.cs" />
     <Compile Include="Assets\Script\PlayerMovement.cs" />
     <Compile Include="Assets\Script\Gun.cs" />
+    <Compile Include="Assets\Script\AI\BehaviorTree\BTTask_AlwaysFail.cs" />
     <Compile Include="Assets\Script\MovementComponent.cs" />
+    <Compile Include="Assets\Script\AI\BehaviorTree\BTNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
