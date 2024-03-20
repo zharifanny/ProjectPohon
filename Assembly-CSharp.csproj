@@ -67,11 +67,15 @@
     <Compile Include="Assets\Script\AI\Perception\SightSense.cs" />
     <Compile Include="Assets\Script\SmoothCameraFollow.cs" />
     <Compile Include="Assets\Script\AI\BehaviorTree\Blackboard.cs" />
+    <Compile Include="Assets\Script\Enemy.cs" />
+    <Compile Include="Assets\Script\Components\MovementComponent.cs" />
     <Compile Include="Assets\Script\AI\BehaviorTree\BTTask_Log.cs" />
     <Compile Include="Assets\Script\AI\Perception\SenseComp.cs" />
+    <Compile Include="Assets\Script\AI\Perception\PerceptionComponent.cs" />
     <Compile Include="Assets\Script\PlayerAim.cs" />
     <Compile Include="Assets\Script\AI\ChomperBehavior.cs" />
     <Compile Include="Assets\Script\AI\BehaviorTree\BehaviorTree.cs" />
+    <Compile Include="Assets\Script\Components\HealthComponent.cs" />
     <Compile Include="Assets\Script\AI\BehaviorTree\Compositor.cs" />
     <Compile Include="Assets\Script\AI\Perception\PerceptionStimuli.cs" />
     <Compile Include="Assets\Script\Bullet.cs" />
@@ -82,7 +86,6 @@
     <Compile Include="Assets\Script\PlayerMovement.cs" />
     <Compile Include="Assets\Script\Gun.cs" />
     <Compile Include="Assets\Script\AI\BehaviorTree\BTTask_AlwaysFail.cs" />
-    <Compile Include="Assets\Script\MovementComponent.cs" />
     <Compile Include="Assets\Script\AI\BehaviorTree\BTNode.cs" />
   </ItemGroup>
   <ItemGroup>

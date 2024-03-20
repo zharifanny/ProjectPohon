@@ -4,9 +4,12 @@ using UnityEngine;
 
 public abstract class SenseComp : MonoBehaviour
 {
+    [SerializeField] float forgettingTime = 3f;
     static List<PerceptionStimuli> registeredStimulis = new List<PerceptionStimuli>();
     List<PerceptionStimuli> PerceivableStimulis = new List<PerceptionStimuli>();
-
+    Dictionary<PerceptionStimuli, Coroutine> ForgettingRoutines = new Dictionary<PerceptionStimuli, Coroutine>();
+    public delegate void OnPerceptionUpdated(PerceptionStimuli stimuli, bool successfullySensed);
+    public event OnPerceptionUpdated onPerceptionUpdated;
     static public void RegisterStimuli(PerceptionStimuli stimuli)
     {
         if(registeredStimulis.Contains(stimuli))
@@ -32,19 +35,36 @@ public abstract class SenseComp : MonoBehaviour
             {
                 if(!PerceivableStimulis.Contains(stimuli))
                 {
-                    Debug.Log($"I just sensed {stimuli.gameObject}");
                     PerceivableStimulis.Add(stimuli);
+                    if(ForgettingRoutines.TryGetValue(stimuli, out Coroutine routine))
+                    {
+                        StopCoroutine(routine);
+                        ForgettingRoutines.Remove(stimuli);
+                    }
+                    else
+                    {
+                        onPerceptionUpdated?.Invoke(stimuli, true);
+                        Debug.Log($"I just sensed {stimuli.gameObject}");
+                    }
                 }
             }
             else
             {
                 if(PerceivableStimulis.Contains(stimuli))
                 {
-                    Debug.Log($"I lost track of {stimuli.gameObject}");
                     PerceivableStimulis.Remove(stimuli);
+                    ForgettingRoutines.Add(stimuli, StartCoroutine(ForgetStimuli(stimuli)));
                 }
             }
         }
+    }
+
+    IEnumerator ForgetStimuli(PerceptionStimuli stimuli)
+    {
+        yield return new WaitForSeconds(forgettingTime);
+        ForgettingRoutines.Remove(stimuli);
+        onPerceptionUpdated?.Invoke(stimuli, false);
+        Debug.Log($"I lost track of {stimuli.gameObject}");
     }
 
     protected virtual void DrawDebug()
