@@ -230,9 +230,13 @@ MonoBehaviour:
   jumpSound: {fileID: 0}
   movementComponent: {fileID: 173649148}
   aimScript: {fileID: 173649150}
-  moveSpeed: 20
+  moveSpeed: 10
   maxMoveSpeed: 80
   minMoveSpeed: 5
+  dashSpeed: 30
+  dashTime: 0.2
+  dashCooldown: 2
+  dashInput: 32
 --- !u!114 &173649148
 MonoBehaviour:
   m_ObjectHideFlags: 0
