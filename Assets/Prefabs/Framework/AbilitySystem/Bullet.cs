@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
             //        Destroy(other.gameObject); // Destroy the target GameObject
             //    }
 
-            Destroy(gameObject); // bulletnya didestroy pas kena object
+            //Destroy(gameObject); // bulletnya didestroy pas kena object
         }
         Destroy(gameObject);
     }
