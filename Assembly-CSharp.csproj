@@ -60,20 +60,20 @@
     <Analyzer Include="/Volumes/compton/Development/Unity/2022.3.16f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Script/SmoothCameraFollow.cs" />
+    <Compile Include="Assets/Prefabs/Framework/Test_3C/MovementComponent.cs" />
+    <Compile Include="Assets/Prefabs/Framework/Weapon/Weapon.cs" />
+    <Compile Include="Assets/Prefabs/Framework/Test_3C/PlayerMovement.cs" />
     <Compile Include="Assets/Prefabs/Framework/AbilitySystem/SpeedBoostAbility.cs" />
-    <Compile Include="Assets/Prefabs/Framework/AbilitySystem/HealthComponent.cs" />
-    <Compile Include="Assets/Prefabs/Framework/AbilitySystem/Pistol.cs" />
-    <Compile Include="Assets/Script/PlayerAim.cs" />
+    <Compile Include="Assets/Prefabs/Framework/PlayerStat/HealthComponent.cs" />
     <Compile Include="Assets/Prefabs/Framework/AbilitySystem/Ability.cs" />
-    <Compile Include="Assets/Prefabs/Framework/AbilitySystem/Bullet.cs" />
+    <Compile Include="Assets/Prefabs/Framework/Weapon/PlayerAim.cs" />
     <Compile Include="Assets/Prefabs/Framework/AbilitySystem/AbilityComponent.cs" />
-    <Compile Include="Assets/Prefabs/Framework/AbilitySystem/Weapon.cs" />
+    <Compile Include="Assets/Prefabs/Framework/Test_3C/SmoothCameraFollow.cs" />
+    <Compile Include="Assets/Prefabs/Framework/Weapon/AimComponent.cs" />
     <Compile Include="Assets/Prefabs/Framework/AbilitySystem/Player.cs" />
-    <Compile Include="Assets/Script/PlayerMovement.cs" />
-    <Compile Include="Assets/Script/Gun.cs" />
-    <Compile Include="Assets/Script/MovementComponent.cs" />
-    <Compile Include="Assets/Prefabs/Framework/AbilitySystem/AimComponent.cs" />
+    <Compile Include="Assets/Prefabs/Framework/Weapon/Gun.cs" />
+    <Compile Include="Assets/Prefabs/Framework/Weapon/Bullet.cs" />
+    <Compile Include="Assets/Prefabs/Framework/Weapon/Pistol.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

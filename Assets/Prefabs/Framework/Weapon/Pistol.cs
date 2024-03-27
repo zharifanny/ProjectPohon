@@ -6,7 +6,7 @@ using UnityEngine;
 public class Pistol : Weapon
 {
     [SerializeField] AimComponent aimComp;
-    [SerializeField] float Damage = 5f;
+    [SerializeField] float Damage = 5f; 
 
     public override void Attack()
     {
