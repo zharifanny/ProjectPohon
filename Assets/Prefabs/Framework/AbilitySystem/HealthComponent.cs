@@ -15,20 +15,20 @@ public class HealthComponent : MonoBehaviour
     public event OnTakeDamage onTakeDamage;
     public event OnHealthEmpty onHealthEmpty;
 
-    public void changeHealth(float amt)
+    public void changeHealth(float amount)
     {
-        if(amt == 0)
+        if(amount == 0)
         {
             return;
         }
 
-        health += amt;
-        if(amt<0)
+        health += amount;
+        if(amount<0)
         {
-            onTakeDamage?.Invoke(health, amt, maxhealth);
+            onTakeDamage?.Invoke(health, amount, maxhealth);
         }
 
-        onHealthChange?.Invoke(health, amt, maxhealth);
+        onHealthChange?.Invoke(health, amount, maxhealth);
 
         if(health<=0)
         {
@@ -37,6 +37,6 @@ public class HealthComponent : MonoBehaviour
             Destroy(gameObject); //destroy pas healthnya 0
         }
 
-        Debug.Log($"{gameObject.name}, taking damage: {amt}, health is now: {health}");
+        Debug.Log($"{gameObject.name}, taking damage: {amount}, health is now: {health}");
     }
 }

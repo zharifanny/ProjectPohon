@@ -7,9 +7,9 @@ public class Gun : MonoBehaviour
 
     public Transform bulletSpawnPoint;
     public GameObject bulletPrefab;
-    public float bulletSpeed = 10f;
+    public float bulletSpeed = 0.1f;
     public float fireRate = 0.5f;
-    float nextfire;
+    private float nextfire;
 
 
     // Update is called once per frame
