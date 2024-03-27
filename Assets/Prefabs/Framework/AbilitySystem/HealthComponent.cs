@@ -34,6 +34,7 @@ public class HealthComponent : MonoBehaviour
         {
             health = 0;
             onHealthEmpty?.Invoke();
+            Destroy(gameObject); //destroy pas healthnya 0
         }
 
         Debug.Log($"{gameObject.name}, taking damage: {amt}, health is now: {health}");
